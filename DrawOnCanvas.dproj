@@ -104,6 +104,11 @@
             <Form>fmMain</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="uDraw.Base.pas"/>
+        <DCCReference Include="uDraw.Types.pas"/>
+        <DCCReference Include="uDraw.Basic.pas"/>
+        <DCCReference Include="uDraw.Ex.pas"/>
+        <DCCReference Include="uDraw.Core.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
