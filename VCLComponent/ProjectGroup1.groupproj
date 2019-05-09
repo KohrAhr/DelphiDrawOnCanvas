@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{A6FD8A82-AE27-4331-84EE-0250F01E5837}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="C:\Users\Admin\Documents\Embarcadero\Studio\Projects\LV.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="C:\Users\Admin\Documents\Embarcadero\Studio\Projects\LV1CLICK.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="LV">
+        <MSBuild Projects="C:\Users\Admin\Documents\Embarcadero\Studio\Projects\LV.dproj"/>
+    </Target>
+    <Target Name="LV:Clean">
+        <MSBuild Projects="C:\Users\Admin\Documents\Embarcadero\Studio\Projects\LV.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="LV:Make">
+        <MSBuild Projects="C:\Users\Admin\Documents\Embarcadero\Studio\Projects\LV.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="LV1CLICK">
+        <MSBuild Projects="C:\Users\Admin\Documents\Embarcadero\Studio\Projects\LV1CLICK.dproj"/>
+    </Target>
+    <Target Name="LV1CLICK:Clean">
+        <MSBuild Projects="C:\Users\Admin\Documents\Embarcadero\Studio\Projects\LV1CLICK.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="LV1CLICK:Make">
+        <MSBuild Projects="C:\Users\Admin\Documents\Embarcadero\Studio\Projects\LV1CLICK.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="LV;LV1CLICK"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="LV:Clean;LV1CLICK:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="LV:Make;LV1CLICK:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

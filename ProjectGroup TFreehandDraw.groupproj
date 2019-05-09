@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{71D1566B-6F9E-4F66-BE08-3AAAE857BBC3}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="TestApp\DelphiOwnComponentTestDrive.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCLComponent\LV1CLICK.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DelphiOwnComponentTestDrive">
+        <MSBuild Projects="TestApp\DelphiOwnComponentTestDrive.dproj"/>
+    </Target>
+    <Target Name="DelphiOwnComponentTestDrive:Clean">
+        <MSBuild Projects="TestApp\DelphiOwnComponentTestDrive.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DelphiOwnComponentTestDrive:Make">
+        <MSBuild Projects="TestApp\DelphiOwnComponentTestDrive.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="LV1CLICK">
+        <MSBuild Projects="VCLComponent\LV1CLICK.dproj"/>
+    </Target>
+    <Target Name="LV1CLICK:Clean">
+        <MSBuild Projects="VCLComponent\LV1CLICK.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="LV1CLICK:Make">
+        <MSBuild Projects="VCLComponent\LV1CLICK.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DelphiOwnComponentTestDrive;LV1CLICK"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="DelphiOwnComponentTestDrive:Clean;LV1CLICK:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="DelphiOwnComponentTestDrive:Make;LV1CLICK:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

@@ -5,3 +5,12 @@
 /*.res
 /Win32
 /__history
+*.dcu
+*.identcache
+*.dsk
+*.local
+*.stat
+*.exe
+*.res
+*.~dsk
+*.tvsconfig
